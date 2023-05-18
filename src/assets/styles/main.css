@@ -1,5 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  background-color: #efed40;
+  width: 100%;
+  height: 100vh;
+  /* overflow: auto; */
+  color: #fff;
+  background-color: #fff;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  transition: all 0.3s;
+}
+.form {
+  position: relative;
+  width: 300px;
+  height: fit-content;
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  transition: all 0.3s;
+}
+.dark .form {
+  background-color: #333;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 54px 55px, rgba(0, 0, 0, 0.2) 0px -12px 30px, rgba(0, 0, 0, 0.2) 0px 4px 6px,
+    rgba(0, 0, 0, 0.2) 0px 12px 13px, rgba(0, 0, 0, 0.2) 0px -3px 5px;
+}
+.mode {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background-color: #1e1e1e;
+  cursor: pointer;
+}
+.mode i {
+  margin-top: -1px;
+}
+.dark .mode {
+  background-color: #fff;
+  color: #000;
+}
+.form .form-title {
+  color: #000;
+  font-size: 30px;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+}
+.dark .form .form-title {
+  color: #fff;
+}
+.form input {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  background-color: #fff;
+  outline: none;
+  border-radius: 5px;
+  color: #000;
+  border: 0;
+  border: 1px solid #8181817c;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all 0.3s;
+}
+.dark .form input {
+  background-color: #333;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.403) 0px 3px 8px;
+}
+.form .btn {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  outline: none;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(43, 124, 43);
+  color: #fff;
+  border: 0;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.form .btn:active {
+  background-color: rgb(1, 55, 1);
+}
+.form-text {
+  color: #777;
+  font-size: 13px;
+}
+.form-text-bold {
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 5px;
+  transition: all 0.3s;
+}
+.dark .form-text-bold {
+  color: #fff;
+}
+
+.sign-form {
+  display: flex;
+}
+.sign-form.hide,
+.login-form.hide {
+  display: none;
+}
+.login-form {
+  display: flex;
+}
+.login-page.hide {
+  display: none;
 }
