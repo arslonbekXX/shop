@@ -7,30 +7,27 @@ const CopywebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   context: __dirname,
   entry: {
-    app: './src/app.ts'
+    index: './src/index.ts'
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
       {
         test: /\.ts?$/,
         loader: 'ts-loader',
-        exclude: /node_modules/,
+        exclude: /node_modules/
       },
       {
         test: /\.s?[ac]ss$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
-      }, {
-        test: /\.(png|gif|jpg|jpeg|svg|xml)$/,
-        use: [ 'url-loader' ]
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
+      {
+        test: /\.(png|gif|jpg|jpeg|svg|xml)$/,
+        use: ['url-loader']
+      }
     ]
   },
   resolve: {
@@ -38,17 +35,16 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'public/index.html'
     }),
     new CopywebpackPlugin({
       patterns: [
         {
           from: 'src/assets/**/*',
-          to: 'assets/[name][ext]',
-
-        },
-      ],
-    }),
+          to: 'assets/[name][ext]'
+        }
+      ]
+    })
   ],
   devServer: {
     static: path.join(__dirname, 'dist')
